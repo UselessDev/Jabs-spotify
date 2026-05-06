@@ -4,7 +4,7 @@ export default function Sidebar({ activeSection, setActiveSection }) {
   const menuItems = [
     { key: 'home', label: 'Home', icon: Home },
     { key: 'library', label: 'Library', icon: Library },
-    { key: 'favorites', label: 'Favorites', icon: Heart },
+    { key: 'liked', label: 'Liked Songs', icon: Heart },
     { key: 'profile', label: 'Profile', icon: UserCircle2 },
   ]
 
