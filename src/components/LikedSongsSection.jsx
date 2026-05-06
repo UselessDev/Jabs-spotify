@@ -4,7 +4,7 @@ import { COVER_BUCKET, getStoragePublicUrl } from '../services/songService'
 export default function LikedSongsSection({ likedSongs, onPlay }) {
   return (
     <section>
-      <h2 className="mb-3 text-lg font-semibold text-slate-100">Liked Songs</h2>
+      <h2 className="mb-3 text-lg font-semibold text-slate-100">Favorites</h2>
       <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
         {likedSongs.map((song, index) => (
           <div
@@ -35,7 +35,7 @@ export default function LikedSongsSection({ likedSongs, onPlay }) {
           </div>
         ))}
         {likedSongs.length === 0 && (
-          <p className="text-sm text-slate-400">You have no liked songs yet.</p>
+          <p className="text-sm text-slate-400">You have no favotites yet.</p>
         )}
       </div>
     </section>
