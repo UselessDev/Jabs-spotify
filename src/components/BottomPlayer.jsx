@@ -28,21 +28,28 @@ export default function BottomPlayer() {
   useEffect(() => {
     if (!audioRef.current || !currentSong) return
     audioRef.current.load()
-    audioRef.current.play().catch(() => {})
-    setIsPlaying(true)
+    audioRef.current.play().then(() => {
+      setIsPlaying(true)
+    }).catch(() => {
+      setIsPlaying(false)
+    })
     setProgress(0)
     setCurrentTime(0)
     markPlayed(currentSong)
   }, [currentSong, markPlayed])
 
-  const togglePlay = () => {
-    if (!audioRef.current) return
+  const togglePlay = async () => {
+    if (!audioRef.current || !currentSong) return
     if (isPlaying) {
       audioRef.current.pause()
       setIsPlaying(false)
     } else {
-      audioRef.current.play().catch(() => {})
-      setIsPlaying(true)
+      try {
+        await audioRef.current.play()
+        setIsPlaying(true)
+      } catch {
+        setIsPlaying(false)
+      }
     }
   }
 
@@ -68,6 +75,8 @@ export default function BottomPlayer() {
         ref={audioRef}
         src={songUrl}
         onEnded={playNext}
+        onPlay={() => setIsPlaying(true)}
+        onPause={() => setIsPlaying(false)}
         onTimeUpdate={(event) => {
           const audio = event.currentTarget
           // Guard for divide-by-zero when metadata is not loaded yet.
