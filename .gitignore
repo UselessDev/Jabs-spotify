@@ -12,7 +12,7 @@ dist
 dist-ssr
 *.local
 
-# #Supabase
+
 .env
 src/supabase/schema.sql
 
