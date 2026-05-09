@@ -141,7 +141,7 @@ export default function DashboardPage() {
     setFeedbackModal({
       open: true,
       title: 'Added to Favorites',
-      message: `"${favoritedSong?.title ?? 'Song'}" is now in Liked Songs.`,
+      message: `"${favoritedSong?.title ?? 'Song'}" is now in Favorites.`,
     })
   }
 

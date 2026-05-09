@@ -10,7 +10,7 @@ export default function Sidebar({ activeSection, setActiveSection }) {
 
   return (
     <aside className="w-full rounded-xl border border-white/10 bg-[#171b22] p-4 md:w-64">
-      <h1 className="mb-5 text-xl font-semibold text-slate-100">Mini Spotify</h1>
+      <h1 className="mb-5 text-xl font-semibold text-slate-100">Jabs Spotify</h1>
       <nav className="space-y-2">
         {menuItems.map((item) => {
           const Icon = item.icon
