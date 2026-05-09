@@ -13,7 +13,7 @@ dist-ssr
 *.local
 
 # #Supabase
-# .env
+.env
 # src/supabase/schema.sql
 
 # Editor directories and files
