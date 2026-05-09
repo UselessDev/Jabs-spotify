@@ -14,7 +14,7 @@ dist-ssr
 
 # #Supabase
 .env
-# src/supabase/schema.sql
+src/supabase/schema.sql
 
 # Editor directories and files
 .vscode/*
